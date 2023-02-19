@@ -34,10 +34,15 @@ const setOptions = (chartData: any) => ({
 const Chart = () => {
   const dispatch = useAppDispatch();
   const chartData = useAppSelector((state) => state.efoTerms.chartData);
-  console.log("chart");
   return (
-    <ErrorBoundary fallback={<ErrorComponent />} onError={() => dispatch(setModal(true))}>
-      <HighchartsReact highcharts={Highcharts} options={setOptions(chartData)} />
+    <ErrorBoundary
+      fallback={<ErrorComponent />}
+      onError={() => dispatch(setModal(true))}
+    >
+      <HighchartsReact
+        highcharts={Highcharts}
+        options={setOptions(chartData)}
+      />
     </ErrorBoundary>
   );
 };

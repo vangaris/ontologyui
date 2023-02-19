@@ -3,7 +3,6 @@ import { columns } from "../../types/constants";
 import { memo } from "react";
 
 const Header = () => {
-  console.log("Header");
   return (
     <TableHead sx={{ background: "#f5f5f5" }}>
       <TableRow>

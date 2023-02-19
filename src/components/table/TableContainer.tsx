@@ -34,7 +34,6 @@ function TableContainer() {
     dispatch(setPage(0));
   };
 
-  console.log("table");
   return (
     <ErrorBoundary
       fallback={<div>test</div>}

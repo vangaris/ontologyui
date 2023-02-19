@@ -7,7 +7,8 @@ const Body = () => {
   const efoTerms = useAppSelector((state) => state.efoTerms.terms);
   const rowsPerPage = useAppSelector((state) => state.efoTerms.rowsPerPage);
   const page = useAppSelector((state) => state.efoTerms.page);
-  const emptyRows = rowsPerPage - Math.min(rowsPerPage, efoTerms.length - page * rowsPerPage);
+  const emptyRows =
+    rowsPerPage - Math.min(rowsPerPage, efoTerms.length - page * rowsPerPage);
 
   const memoizedCellSx = useMemo(
     () => ({
@@ -17,7 +18,6 @@ const Body = () => {
     []
   );
 
-  console.log("body");
   return (
     <TableBody>
       {(rowsPerPage > 0
@@ -27,7 +27,9 @@ const Body = () => {
         <TableRow key={term.iri}>
           <TableCell sx={memoizedCellSx}>{term.iri}</TableCell>
           <TableCell sx={memoizedCellSx}>{term.label}</TableCell>
-          <TableCell sx={memoizedCellSx}>{term.synonyms ? term.synonyms.join(", ") : ""}</TableCell>
+          <TableCell sx={memoizedCellSx}>
+            {term.synonyms ? term.synonyms.join(", ") : ""}
+          </TableCell>
           <TableCell sx={memoizedCellSx}>{term.description}</TableCell>
         </TableRow>
       ))}
