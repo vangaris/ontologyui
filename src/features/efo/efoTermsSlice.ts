@@ -5,36 +5,37 @@ import { ChartData } from '../../types/types'
 
 
 type InitialStateTypes = {
- terms: Array<any>,
-    status: 'idle' | 'loading' | 'succeeded' | 'failed',
-    error: string | null
-    rowsPerPage: number
-    page: number
-    chartData:any
+  terms: Array<any>,
+  status: 'idle' | 'loading' | 'succeeded' | 'failed',
+  error: string | null
+  rowsPerPage: number
+  page: number
+  chartData:any
   isModalOpen: boolean
+  size: number
 }
 
 const initialState: InitialStateTypes = {
-    terms: [],
-    status: 'idle',
-    error: null,
-    rowsPerPage: 5,
-    page: 0,
+  terms: [],
+  status: 'idle',
+  error: null,
+  rowsPerPage: 5,
+  page: 0,
   chartData: [],
-  isModalOpen: false
-
+  isModalOpen: false,
+  size: 20
 }
 
 
 
 
-    const setTermDataToWordsCount = (efoTerms:Array<any>) => efoTerms.map((term) => {
-      const wordCount = term.label.split(" ").length;
+const setTermDataToWordsCount = (efoTerms:Array<any>) => efoTerms.map((term) => {
+  const wordCount = term.label.split(" ").length;
       return { x: wordCount, y: 1 };
-    });
+  });
 
-        const groupedChartDataData = (data: ChartData[]) => data.reduce((acc, curr) => {
-      const found = acc.find((el) => el.x === curr.x);
+  const groupedChartDataData = (data: ChartData[]) => data.reduce((acc, curr) => {
+    const found = acc.find((el) => el.x === curr.x);
       if (found) {
         found.y += curr.y;
       } else {

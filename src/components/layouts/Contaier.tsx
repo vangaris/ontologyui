@@ -12,12 +12,12 @@ const Container = () => {
       <Paper style={{ margin: 50 }}>
         <Box mx={{ margin: 50 }}></Box>
         <Box sx={{ my: 4 }}>
-          <TableContainer />
+          <Chart />
         </Box>
       </Paper>
       <Paper style={{ margin: 50 }}>
         <Box sx={{ my: 4 }}>
-          <Chart />
+          <TableContainer />
         </Box>
       </Paper>
     </Grid>

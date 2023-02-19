@@ -1,7 +1,16 @@
 import React from "react";
 
-import { Table, TableContainer as TableContainerMUI, Paper, TablePagination } from "@mui/material";
-import { setModal, setPage, setRowsPerPage } from "../../features/efo/efoTermsSlice";
+import {
+  Table,
+  TableContainer as TableContainerMUI,
+  Paper,
+  TablePagination,
+} from "@mui/material";
+import {
+  setModal,
+  setPage,
+  setRowsPerPage,
+} from "../../features/efo/efoTermsSlice";
 import { useAppDispatch, useAppSelector } from "../../features/efo/hooks";
 import ErrorBoundary from "../errorBoundary/ErrorBoundary";
 import Header from "./Header";
@@ -18,14 +27,19 @@ function TableContainer() {
     dispatch(setPage(newPage));
   };
 
-  const handleChangeRowsPerPage = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeRowsPerPage = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     dispatch(setRowsPerPage(parseInt(event.target.value, 10)));
     dispatch(setPage(0));
   };
 
   console.log("table");
   return (
-    <ErrorBoundary fallback={<div>test</div>} onError={() => dispatch(setModal(true))}>
+    <ErrorBoundary
+      fallback={<div>test</div>}
+      onError={() => dispatch(setModal(true))}
+    >
       <TableContainerMUI component={Paper}>
         <Table>
           <Header />
