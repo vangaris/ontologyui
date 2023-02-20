@@ -5,7 +5,6 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 
 import Typography from "@mui/material/Typography";
-// import { setModal } from "../../features/map/vesselSlice";
 import { Box } from "@mui/material";
 import { useAppDispatch, useAppSelector } from "../../features/efo/hooks";
 import { setModal } from "../../features/efo/efoTermsSlice";
@@ -35,8 +34,7 @@ const Modal = () => {
 
       <DialogContent dividers>
         <Typography gutterBottom>
-          Sorry, we could not retrieve data for the requested vessel. Please make sure the MMSI and
-          IMO and DAYS values are correct and try again.
+          Sorry, we could not retrieve data try again.
         </Typography>
       </DialogContent>
       <DialogActions>
