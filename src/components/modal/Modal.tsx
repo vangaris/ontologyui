@@ -29,7 +29,7 @@ const Modal = () => {
   return (
     <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={modal}>
       <Box margin={2}>
-        <Typography variant="h6">Vessel API</Typography>
+        <Typography variant="h6">Efo terms</Typography>
       </Box>
 
       <DialogContent dividers>
