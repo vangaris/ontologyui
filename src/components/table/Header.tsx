@@ -1,5 +1,5 @@
 import { TableCell, TableHead, TableRow } from "@mui/material";
-import { columns } from "../../types/constants";
+import { columns } from "../../constants/constants";
 import { memo } from "react";
 
 const Header = () => {

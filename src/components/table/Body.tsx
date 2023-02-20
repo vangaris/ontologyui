@@ -1,6 +1,6 @@
 import { TableBody, TableCell, TableRow } from "@mui/material";
 import { useAppSelector } from "../../features/efo/hooks";
-import { columns } from "../../types/constants";
+import { columns } from "../../constants/constants";
 import { useMemo } from "react";
 
 const Body = () => {

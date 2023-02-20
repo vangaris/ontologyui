@@ -1,21 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { getEfoTerms } from './actions'
-import { ChartData } from '../../types/types'
+import {  InitialStateTypes } from '../../types/types'
+import { groupedChartDataData, setTermDataToWordsCount } from './utils'
 
-
-
-type InitialStateTypes = {
-  terms: Array<any>,
-  status: 'idle' | 'loading' | 'succeeded' | 'failed',
-  error: string | null
-  rowsPerPage: number
-  page: number
-  chartData:any
-  isModalOpen: boolean
-  size: number
-}
-
-const initialState: InitialStateTypes = {
+export const initialState: InitialStateTypes = {
   terms: [],
   status: 'idle',
   error: null,
@@ -25,24 +13,6 @@ const initialState: InitialStateTypes = {
   isModalOpen: false,
   size: 20
 }
-
-
-
-
-const setTermDataToWordsCount = (efoTerms:Array<any>) => efoTerms.map((term) => {
-  const wordCount = term.label.split(" ").length;
-      return { x: wordCount, y: 1 };
-  });
-
-  const groupedChartDataData = (data: ChartData[]) => data.reduce((acc, curr) => {
-    const found = acc.find((el) => el.x === curr.x);
-      if (found) {
-        found.y += curr.y;
-      } else {
-        acc.push(curr);
-      }
-      return acc;
-    }, [] as ChartData[]);
 
 const efoTermsSlice = createSlice({
   name: 'terms',

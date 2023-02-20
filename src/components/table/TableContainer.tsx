@@ -15,7 +15,7 @@ import { useAppDispatch, useAppSelector } from "../../features/efo/hooks";
 import ErrorBoundary from "../errorBoundary/ErrorBoundary";
 import Header from "./Header";
 import Body from "./Body";
-import { rowsPerPageOptions } from "../../types/constants";
+import { rowsPerPageOptions } from "../../constants/constants";
 
 function TableContainer() {
   const efoTerms = useAppSelector((state) => state.efoTerms.terms);
